@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import { api } from "~/utils/api";
 
 export default function Home() {
-  // const hello = api.example.hello.useQuery({ text: "from tRPC" });
-  const { data } = api.example.getAll.useQuery();
+  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const { data } = api.example.getAll.useQuery({ test: "does this help?" });
 
   useEffect(() => {
     if (data) {
@@ -49,9 +49,9 @@ export default function Home() {
               </div>
             </Link>
           </div>
-          {/* <p className="text-2xl text-white">
+          <p className="text-2xl text-white">
             {hello.data ? hello.data.greeting : "Loading tRPC query..."}
-          </p> */}
+          </p>
         </div>
       </main>
     </>
