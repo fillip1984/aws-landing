@@ -7,8 +7,7 @@ frontend:
     build:
       commands:
         - npm run build
-        - echo "DATABASE_URL='$DATABASE_URL'" >> .env.production
-        - echo "DATABASE_URL='$DATABASE_URL'"
+        - echo "DATABASE_URL='$DATABASE_URL'" >> .env
   artifacts:
     baseDirectory: .next
     files:
