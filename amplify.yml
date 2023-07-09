@@ -6,8 +6,8 @@ frontend:
         - npm ci
     build:
       commands:
+        - env | grep -e DATABASE_URL >> .env.production
         - npm run build
-        - echo DATABASE_URL="$DATABASE_URL" >> .env
   artifacts:
     baseDirectory: .next
     files:
