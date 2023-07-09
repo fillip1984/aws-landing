@@ -5,13 +5,13 @@ import { api } from "~/utils/api";
 
 export default function Home() {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
-  const { data } = api.example.getAll.useQuery();
+  // const { data } = api.example.getAll.useQuery();
 
-  useEffect(() => {
-    if (data) {
-      console.log("data was fetched from db?", data);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (data) {
+  //     console.log("data was fetched from db?", data);
+  //   }
+  // }, [data]);
 
   return (
     <>
