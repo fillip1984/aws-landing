@@ -1,28 +1,14 @@
-# Create T3 App
+# aws-landing
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+I was playing around with the t3 stack and trying to host it on aws amplify. 
 
-## What's next? How do I make an app with this?
+## How did it go?
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+It worked but I was confused by how much amplify did in the background. I was happy with how easy amplify makes it to host an app, it has near vercel qualities in CI/CD but is slower but cheaper! Where I decided to abandon it was when I was trying to understand what resources it generated to host the app. I was trying to connect it to an RDS (aurora postgres instance) but kept getting errors that sounded like a NACL or Security Group issue but I could never figure out where my NextJS server was hosted, so I could never figure out how to unblock the connection. Which turned out to be fine, aurora postgres, serverless v2, cost me $4 after 24 hours so I finally understand why everyone uses planetscale and supabase. I deleted the aurora instance when aws showed I was going to spend $70+ a month running it!
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+The only thing of interest may be the amplify.yml file which extracts my supabase DATABASE_URL out of an .env file which isn't committed.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## What next?
 
-## Learn More
-
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+I followed some tips from [Web Dev Cody](https://youtu.be/Szr5SNFBT3g) and am moving over to [SST.dev](https://sst.dev)
+Right now that repo is private until I can figure out what needs to go into the .gitignore file. It'll be called aws-hub.
